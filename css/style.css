@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+
+.hidden {
+  display: none;
+}
+
+.margin-bottom10 {
+  margin: 10px;
+}
+
+.btn-position {
+  position: absolute;
+  right: 0%;
+  top: 25%;
+}
+
+.li-width {
+  width: 300px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+
+  height: 100vh;
+  min-width: 580px;
+
+  font-family: "Fredoka", sans-serif;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: brightness(60%);
+}
+
+ul {
+  padding: 0;
+}
+
+#todo-list > li {
+  position: relative;
+  padding: 5px;
+}
+
+#todo-list > li > span {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#todo-list > li:hover {
+  background-color: rgba(0, 0, 0, 0.459);
+  cursor: default;
+  border-radius: 10px;
+}
+
+#todo-list > li > button {
+  background-color: rgba(70, 69, 69, 0.089);
+  color: azure;
+
+  border: 1px solid azure;
+  border-radius: 5px;
+}
+
+#todo-list > li > button:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+input::placeholder {
+  color: azure;
+  font-size: 130%;
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+}
+
+.input-area {
+  height: 30px;
+  font-size: 15px;
+
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+  border-bottom: solid 1px azure;
+  color: azure;
+
+  font-size: 100%;
+}
+
+#form-btn {
+  border-radius: 5px;
+  border: 2px solid azure;
+
+  color: azure;
+  background-color: rgba(0, 0, 0, 0);
+
+  padding: 6px 8px;
+
+  font-size: 15px;
+  font-family: "Fredoka", sans-serif;
+}
+
+#todo-form > input {
+  width: 245px;
+  margin-top: 20px;
+  padding: 5px;
+
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+  border-bottom: solid 1px azure;
+  color: azure;
+
+  font-size: 100%;
+}
+
+#quotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+
+  position: absolute;
+  bottom: 0;
+}
+
+#quotes > span:first-child {
+  margin-bottom: 10px;
+}
+
+span {
+  font-size: 20px;
+}
+
+#weather {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin: 20px;
+  padding: 20px;
+}
+
+#clock {
+  position: absolute;
+  top: 0%;
+
+  margin-top: 40px;
+
+  letter-spacing: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: azure;
+}
+
+.bookmark {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+}
