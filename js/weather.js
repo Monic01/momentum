@@ -13,7 +13,7 @@ function successGeo(position) {
       city.innerText = data.name;
       weather.innerText = `${data.weather[0].main} / ${parseInt(
         data.main.temp
-      )}℃`;
+      )} ℃`;
     });
 }
 

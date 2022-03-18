@@ -2,6 +2,9 @@ const loginForm = document.querySelector("#loginForm");
 const inputUserName = document.querySelector("#loginForm input");
 const greeting = document.querySelector("#greeting");
 
+const greetRemoveBtn = document.querySelector("#remove-btn");
+const removeHint = document.querySelector("#greetRemove");
+
 const HIDDEN_CLASS = "hidden";
 
 const greet = ["Hello", "Welcome", "Bonjour"];
@@ -24,6 +27,7 @@ function loginSubmit(event) {
 function showGreeting(name) {
   greeting.innerText = `${greet[random()]}~! ${name}`;
   greeting.classList.remove("hidden");
+  greetRemoveBtn.classList.remove("hidden");
 }
 
 const savedUserName = localStorage.getItem("username");
@@ -34,3 +38,18 @@ if (savedUserName === null) {
 } else {
   showGreeting(savedUserName);
 }
+
+greetRemoveBtn.addEventListener("mouseover", function () {
+  removeHint.classList.remove("hidden");
+});
+
+greetRemoveBtn.addEventListener("mouseout", function () {
+  removeHint.classList.add("hidden");
+});
+
+greetRemoveBtn.addEventListener("click", function () {
+  loginForm.classList.remove("hidden");
+  loginForm.addEventListener("submit", loginSubmit);
+  greeting.classList.add("hidden");
+  greetRemoveBtn.classList.add("hidden");
+});

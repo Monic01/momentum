@@ -19,15 +19,18 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: azure;
 
   height: 100vh;
-  min-width: 580px;
-
+  min-width: 700px;
+  width: 100%;
   font-family: "Fredoka", sans-serif;
 }
 
@@ -36,6 +39,12 @@ img {
   top: 0;
   z-index: -1;
   filter: brightness(60%);
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  min-width: 700px;
 }
 
 ul {
@@ -48,7 +57,7 @@ ul {
 }
 
 #todo-list > li > span {
-  margin-bottom: 10px;
+  margin: 0 5px 10px 0;
   padding: 10px;
 }
 
@@ -62,8 +71,10 @@ ul {
   background-color: rgba(70, 69, 69, 0.089);
   color: azure;
 
-  border: 1px solid azure;
+  border: 1px solid rgba(240, 255, 255, 0.678);
   border-radius: 5px;
+  position: absolute;
+  right: 2%;
 }
 
 #todo-list > li > button:hover {
@@ -118,44 +129,43 @@ input::placeholder {
 
   font-size: 100%;
 }
-
-#quotes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10%;
-
+.topbar {
   position: absolute;
-  bottom: 0;
-}
+  top: 0%;
 
-#quotes > span:first-child {
-  margin-bottom: 10px;
-}
+  width: 100%;
+  min-width: 700px;
 
-span {
-  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #weather {
   display: flex;
   flex-direction: column;
-
-  position: absolute;
-  top: 0%;
-  right: 0%;
   margin: 20px;
   padding: 20px;
 }
 
+#weather span {
+  font-size: 25px;
+}
+
+#dates {
+  margin: 20px;
+  padding: 20px;
+
+  font-size: 25px;
+}
+
 #clock {
   position: absolute;
-  top: 0%;
+  top: 0;
+  margin: 20px;
+  padding: 20px;
 
-  margin-top: 40px;
-
-  letter-spacing: 4px;
+  letter-spacing: 1px;
+  font-size: 25px;
 }
 
 a {
@@ -163,8 +173,83 @@ a {
   color: azure;
 }
 
-.bookmark {
+#quotes {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 30px;
+  padding: 10px;
+
+  max-width: 400px;
+
+  border-radius: 10px;
+  background-color: rgba(240, 255, 255, 0.336);
+}
+
+#quotes span {
+  font-size: 20px;
+  text-align: center;
+}
+
+#quotes > span:first-child {
+  margin-bottom: 10px;
+}
+
+footer {
   position: absolute;
-  right: 10%;
-  bottom: 10%;
+  bottom: 0%;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  min-width: 700px;
+}
+
+.bookmark a {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.bookmark {
+  margin: 30px;
+  padding: 15px 0 10px 10px;
+  border-radius: 10px;
+  background-color: rgba(240, 255, 255, 0.336);
+  text-align: center;
+}
+
+.greetbox {
+  display: flex;
+  position: relative;
+}
+.greetbox button {
+  height: 25px;
+  position: relative;
+  top: 35%;
+  right: -10%;
+
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.164);
+  color: azure;
+  border-radius: 5px;
+  border: 1px solid rgba(240, 255, 255, 0.363);
+}
+.greetbox button:hover {
+  cursor: pointer;
+}
+#greetRemove {
+  text-align: center;
+  background-color: rgba(241, 238, 238, 0.329);
+  color: azure;
+
+  position: absolute;
+  right: -30%;
+  top: -20%;
+  padding: 0 5px;
+
+  border-radius: 5px;
 }
