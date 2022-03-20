@@ -21,15 +21,17 @@
 body {
   margin: 0;
   padding: 0;
+
   display: flex;
-  flex-wrap: wrap;
+  position: relative;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: azure;
 
   height: 100vh;
-  min-width: 700px;
+  min-width: 450px;
   width: 100%;
   font-family: "Fredoka", sans-serif;
 }
@@ -49,6 +51,51 @@ img {
 
 ul {
   padding: 0;
+}
+
+.todo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 30px 20px 30px 20px;
+}
+
+#loginForm {
+  justify-content: center;
+  align-items: center;
+}
+
+#todo-list {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  max-height: 400px;
+
+  background-color: rgba(240, 255, 255, 0.336);
+  border-radius: 10px;
+}
+
+#todo-list::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 1px;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background-color: rgba(252, 252, 252, 0.623);
+  border-radius: 10px;
+}
+
+#todo-list::-webkit-scrollbar-track {
+  background-color: rgba(240, 255, 255, 0.336);
+  border-radius: 10px;
 }
 
 #todo-list > li {
@@ -117,11 +164,21 @@ input::placeholder {
   font-family: "Fredoka", sans-serif;
 }
 
+.todo-box {
+  margin: 30px;
+}
+
+.todo-box {
+  position: absolute;
+  left: 0%;
+  top: 30%;
+  margin: 0 0 20px 60px;
+}
+
 #todo-form > input {
-  width: 245px;
   margin-top: 20px;
   padding: 5px;
-
+  width: 320px;
   border: none;
   background-color: rgba(240, 248, 255, 0);
   border-bottom: solid 1px azure;
@@ -129,6 +186,7 @@ input::placeholder {
 
   font-size: 100%;
 }
+
 .topbar {
   position: absolute;
   top: 0%;
@@ -151,21 +209,20 @@ input::placeholder {
   font-size: 25px;
 }
 
-#dates {
-  margin: 20px;
-  padding: 20px;
+.topbar > div {
+  margin: 40px;
+  margin-left: 100px;
+  text-align: center;
+}
 
+#dates {
   font-size: 25px;
 }
 
 #clock {
-  position: absolute;
-  top: 0;
-  margin: 20px;
-  padding: 20px;
-
   letter-spacing: 1px;
-  font-size: 25px;
+  font-size: 35px;
+  margin: 0%;
 }
 
 a {
@@ -183,7 +240,7 @@ a {
   margin: 30px;
   padding: 10px;
 
-  max-width: 400px;
+  max-width: 370px;
 
   border-radius: 10px;
   background-color: rgba(240, 255, 255, 0.336);
@@ -205,8 +262,6 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
-
-  min-width: 700px;
 }
 
 .bookmark a {
@@ -220,36 +275,81 @@ footer {
   border-radius: 10px;
   background-color: rgba(240, 255, 255, 0.336);
   text-align: center;
+
+  max-width: 400px;
 }
 
 .greetbox {
-  display: flex;
   position: relative;
 }
-.greetbox button {
-  height: 25px;
-  position: relative;
-  top: 35%;
-  right: -10%;
 
-  margin-left: 10px;
+#greeting {
+  font-size: 40px;
+  text-align: center;
+}
+
+#remove-btn {
+  position: absolute;
+  top: 45%;
+  right: -13%;
+
   background-color: rgba(0, 0, 0, 0.164);
   color: azure;
   border-radius: 5px;
   border: 1px solid rgba(240, 255, 255, 0.363);
 }
+
 .greetbox button:hover {
   cursor: pointer;
 }
+
 #greetRemove {
   text-align: center;
   background-color: rgba(241, 238, 238, 0.329);
   color: azure;
 
   position: absolute;
+  top: 0%;
   right: -30%;
-  top: -20%;
   padding: 0 5px;
 
   border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    margin-bottom: 90px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dates,
+  #clock,
+  #weather {
+    margin: 0;
+  }
+
+  .todo-box {
+    position: relative;
+    margin: 0;
+  }
+
+  .topbar > div {
+    margin: 40px;
+    text-align: center;
+  }
 }

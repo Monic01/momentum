@@ -20,31 +20,31 @@ function loginSubmit(event) {
 
   localStorage.setItem("username", userName);
 
+  loginForm.classList.add(HIDDEN_CLASS);
   showGreeting(userName);
-  loginForm.classList.add("hidden");
 }
 
 function showGreeting(name) {
   greeting.innerText = `${greet[random()]}~! ${name}`;
-  greeting.classList.remove("hidden");
-  greetRemoveBtn.classList.remove("hidden");
+  greeting.classList.remove(HIDDEN_CLASS);
+  greetRemoveBtn.classList.remove(HIDDEN_CLASS);
 }
 
 const savedUserName = localStorage.getItem("username");
 
 if (savedUserName === null) {
-  loginForm.classList.remove("hidden");
+  loginForm.classList.remove(HIDDEN_CLASS);
   loginForm.addEventListener("submit", loginSubmit);
 } else {
   showGreeting(savedUserName);
 }
 
 greetRemoveBtn.addEventListener("mouseover", function () {
-  removeHint.classList.remove("hidden");
+  removeHint.classList.remove(HIDDEN_CLASS);
 });
 
 greetRemoveBtn.addEventListener("mouseout", function () {
-  removeHint.classList.add("hidden");
+  removeHint.classList.add(HIDDEN_CLASS);
 });
 
 greetRemoveBtn.addEventListener("click", function () {
